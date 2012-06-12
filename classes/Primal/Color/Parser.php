@@ -10,6 +10,11 @@ class Parser {
 
 	function __construct($input) {
 		
+		if ($input instanceof Color) {
+			$this->result = $input;
+			return;
+		}
+		
 		//first see if it's a named color. if it is, set our result and end there.
 		if (($result = static::GetNamedColor($input)) !== false) {
 			$this->result = $result;
