@@ -105,9 +105,9 @@ class RGBColor extends Color {
 	
 	function toHex() {
 		$stack = array('#');
-		$stack[] = str_pad(dechex(min(255, $this->red  )), 2, '0', STR_PAD_LEFT);
-		$stack[] = str_pad(dechex(min(255, $this->green)), 2, '0', STR_PAD_LEFT);
-		$stack[] = str_pad(dechex(min(255, $this->blue )), 2, '0', STR_PAD_LEFT);
+		$stack[] = str_pad(dechex(min(255, round($this->red  ))), 2, '0', STR_PAD_LEFT);
+		$stack[] = str_pad(dechex(min(255, round($this->green))), 2, '0', STR_PAD_LEFT);
+		$stack[] = str_pad(dechex(min(255, round($this->blue ))), 2, '0', STR_PAD_LEFT);
 		
 		return implode('', $stack);
 	}
