@@ -5,13 +5,13 @@ namespace Primal\Color;
 class HSLColor extends Color {
 	public $hue = 0;
 	public $saturation = 0;
-	public $lumenance = 0;
+	public $luminance = 0;
 	public $alpha = 1;
 	
 	function __construct($h = 0, $s = 0, $l = 0, $a=1) {
 		$this->hue        = $h;
 		$this->saturation = $s;
-		$this->lumenance  = $l;
+		$this->luminance  = $l;
 		$this->alpha      = $a;
 	}
 	
@@ -30,7 +30,7 @@ class HSLColor extends Color {
 	public function toRGB() {
 		$h = ($this->hue        % 360) / 360;
 		$s = ($this->saturation % 101) / 100;
-		$l = ($this->lumenance  % 101) / 100;
+		$l = ($this->luminance  % 101) / 100;
 		$a = $this->alpha;
 		
 		if ($s === 0) {
@@ -56,7 +56,7 @@ class HSLColor extends Color {
 	}
 	
 	public function toCSS($alpha = null) {
-		return (($alpha === true || $this->alpha < 1) && $alpha !== false) ? "hsla({$this->hue}, {$this->saturation}, {$this->lumenance}, {$this->alpha})" : "hsl({$this->hue}, {$this->saturation}, {$this->lumenance})";
+		return (($alpha === true || $this->alpha < 1) && $alpha !== false) ? "hsla({$this->hue}, {$this->saturation}, {$this->luminance}, {$this->alpha})" : "hsl({$this->hue}, {$this->saturation}, {$this->luminance})";
 	}
 }
 
