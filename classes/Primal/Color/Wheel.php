@@ -10,7 +10,11 @@ class Wheel implements \Iterator, \Countable {
 	protected $startSat = 100;
 	protected $lum = 50;
 	protected $position = 0;
-	
+
+	public function __construct($count = null, $start = null) {
+		if ($count !== null) $this->setTotalColors($count);
+		if ($start !== null) $this->setStartColor($start);
+	}
 	
 	public function setStartColor($input) {
 		$col = Parser::Parse($input)->toHSL();
