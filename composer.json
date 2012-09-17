@@ -1,0 +1,23 @@
+{
+	"name": "Primal/Color",
+	"description": "Collection of classes for converting and manipulating colors",
+	"homepage": "http://github.com/PrimalPHP/Color",
+	"license": "MIT",
+	"keywords": ["color"],
+	"authors": [
+		{
+			"name": "Jarvis Badgley",
+			"homepage": "http://chipersoft.com",
+			"email": "primal@chipersoft.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.10"
+	},
+	"type": "library",
+	"autoload": {
+        "psr-0": {
+            "Primal\\Color": "lib\/"
+        }
+    }
+}
