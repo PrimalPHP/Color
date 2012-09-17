@@ -1,5 +1,5 @@
 {
-	"name": "Primal/Color",
+	"name": "primal/color",
 	"description": "Collection of classes for converting and manipulating colors",
 	"homepage": "http://github.com/PrimalPHP/Color",
 	"license": "MIT",
@@ -19,5 +19,10 @@
         "psr-0": {
             "Primal\\Color": "lib\/"
         }
-    }
+    },
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0"
+		}
+	}
 }
