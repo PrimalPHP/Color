@@ -16,9 +16,9 @@ class RGBColor extends Color {
 	}
 	
 	function toHSV() {
-		$r = ((int)$this->red   % 256) / 256;
-		$g = ((int)$this->green % 256) / 256;
-		$b = ((int)$this->blue  % 256) / 256;
+		$r = ((int)$this->red   % 256) / 255;
+		$g = ((int)$this->green % 256) / 255;
+		$b = ((int)$this->blue  % 256) / 255;
 		$a = $this->alpha;
 		
 		$max = max($r, $g, $b);
@@ -47,9 +47,9 @@ class RGBColor extends Color {
 	}
 	
 	function toHSL() {
-		$r = ((int)$this->red   % 256) / 256;
-		$g = ((int)$this->green % 256) / 256;
-		$b = ((int)$this->blue  % 256) / 256;
+		$r = ((int)$this->red   % 256) / 255;
+		$g = ((int)$this->green % 256) / 255;
+		$b = ((int)$this->blue  % 256) / 255;
 		$a = $this->alpha;
 		
 		$max = max($r, $g, $b);
@@ -78,9 +78,9 @@ class RGBColor extends Color {
 	}
 	
 	function toCMYK() {
-		$r = ((int)$this->red   % 256) / 256;
-		$g = ((int)$this->green % 256) / 256;
-		$b = ((int)$this->blue  % 256) / 256;
+		$r = ((int)$this->red   % 256) / 255;
+		$g = ((int)$this->green % 256) / 255;
+		$b = ((int)$this->blue  % 256) / 255;
 		$a = $this->alpha;
 
 		if ($r === 0 && $g === 0 && $b===0) {
