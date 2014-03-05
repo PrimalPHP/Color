@@ -100,7 +100,7 @@ class RGBColor extends Color {
 	}
 	
 	function toCSS($alpha = null) {
-		return (($alpha === true || $this->alpha < 1) && $alpha !== false) ? "hsla({$this->red}, {$this->green}, {$this->blue}, {$this->alpha})" : "hsl({$this->red}, {$this->green}, {$this->blue})";
+		return (($alpha === true || $this->alpha < 1) && $alpha !== false) ? "rgba({$this->red}, {$this->green}, {$this->blue}, {$this->alpha})" : "rgb({$this->red}, {$this->green}, {$this->blue})";
 	}
 	
 	function toHex() {
