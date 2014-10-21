@@ -65,7 +65,7 @@ class Parser {
 		
 		$chunks = array();
 		if (preg_match(static::$patterns['hex6'], static::$named_colors[$input], $chunks)) {
-			return new RGBColor(hexdec($chunks[0]), hexdec($chunks[1]), hexdec($chunks[2]));
+			return new RGBColor(hexdec($chunks[1]), hexdec($chunks[2]), hexdec($chunks[3]));
 		}
 		
 		return false;
