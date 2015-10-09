@@ -44,7 +44,7 @@ class CMYKColor extends Color {
 	}
 	
 	function toCSS() {
-		return "device-cmyk({$this->cyan}, {$this->majenta}, {$this->yellow}, {$this->black})";
+		return "device-cmyk({$this->cyan}, {$this->magenta}, {$this->yellow}, {$this->black})";
 	}
 
 	
