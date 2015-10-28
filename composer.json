@@ -14,12 +14,20 @@
 	"require": {
 		"php": ">=5.3.3"
 	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.0"
+	},
 	"type": "library",
 	"autoload": {
         "psr-0": {
             "Primal\\Color": "lib\/"
         }
     },
+	"autoload-dev": {
+		"psr-0": {
+			"Tests\\Primal\\Color\\": "tests/unit"
+		}
+	},
 	"extra": {
 		"branch-alias": {
 			"dev-master": "1.0.x-dev"
