@@ -8,25 +8,37 @@ class HSLColor extends Color {
 	public $luminance = 0;
 	public $alpha = 1;
 
-	function __construct($h = 0, $s = 0, $l = 0, $a=1) {
+	public function __construct($h = 0, $s = 0, $l = 0, $a=1) {
 		$this->hue        = $h;
 		$this->saturation = $s;
 		$this->luminance  = $l;
 		$this->alpha      = $a;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function toHSV() {
 		return $this->toRGB()->toHSV();
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function toHSL() {
 		return clone $this;
 	}
 
-	function toCMYK() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toCMYK() {
 		return $this->toRGB()->toCMYK();
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function toRGB() {
 		$h = ($this->hue        % 360) / 360;
 		$s = ($this->saturation % 101) / 100;
@@ -55,6 +67,9 @@ class HSLColor extends Color {
 		return $p;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function toCSS($alpha = null) {
 		return ($alpha === true || $this->alpha < 1) && $alpha !== false
 			? sprintf('hsla(%d, %d, %d, %s)', $this->hue, $this->saturation, $this->luminance, $this->alpha)

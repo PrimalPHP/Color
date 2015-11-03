@@ -8,26 +8,38 @@ class HSVColor extends Color {
 	public $value = 0;
 	public $alpha = 1;
 
-	function __construct($h = 0, $s = 0, $v = 0, $a=1) {
+	public function __construct($h = 0, $s = 0, $v = 0, $a=1) {
 		$this->hue        = $h;
 		$this->saturation = $s;
 		$this->value      = $v;
 		$this->alpha      = $a;
 	}
 
-	function toHSV() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toHSV() {
 		return clone $this;
 	}
 
-	function toHSL() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toHSL() {
 		return $this->toRGB()->toHSL();
 	}
 
-	function toCMYK() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toCMYK() {
 		return $this->toRGB()->toCMYK();
 	}
 
-	function toRGB() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toRGB() {
 		$h = ($this->hue        % 360) / 360;
 		$s = ($this->saturation % 101) / 100;
 		$v = ($this->value      % 101) / 100;
@@ -73,7 +85,10 @@ class HSVColor extends Color {
 		return new RGBColor($r * 255, $g * 255, $b * 255, $a);
 	}
 
-	function toCSS($alpha = null) {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toCSS($alpha = null) {
 		return $this->toRGB()->toCSS($alpha);
 	}
 
