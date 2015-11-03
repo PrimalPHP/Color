@@ -8,7 +8,7 @@ class HSLColor extends Color {
 	public $luminance = 0;
 	public $alpha = 1;
 
-	function __construct($h = 0, $s = 0, $l = 0, $a=1) {
+	public function __construct($h = 0, $s = 0, $l = 0, $a=1) {
 		$this->hue        = $h;
 		$this->saturation = $s;
 		$this->luminance  = $l;
