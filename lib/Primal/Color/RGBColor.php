@@ -8,14 +8,17 @@ class RGBColor extends Color {
 	public $blue = 0;
 	public $alpha = 1;
 
-	function __construct($r = 0, $g = 0, $b = 0, $a=1) {
+	public function __construct($r = 0, $g = 0, $b = 0, $a=1) {
 		$this->red   = $r;
 		$this->green = $g;
 		$this->blue  = $b;
 		$this->alpha = $a;
 	}
 
-	function toHSV() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toHSV() {
 		$r = ((int)$this->red   % 256) / 255;
 		$g = ((int)$this->green % 256) / 255;
 		$b = ((int)$this->blue  % 256) / 255;
@@ -46,7 +49,10 @@ class RGBColor extends Color {
 		return new HSVColor($h*360, $s*100, $v*100, $a);
 	}
 
-	function toHSL() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toHSL() {
 		$r = ((int)$this->red   % 256) / 255;
 		$g = ((int)$this->green % 256) / 255;
 		$b = ((int)$this->blue  % 256) / 255;
@@ -77,7 +83,10 @@ class RGBColor extends Color {
 		return new HSLColor($h*360, $s*100, $l*100, $a);
 	}
 
-	function toCMYK() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toCMYK() {
 		$r = ((int)$this->red   % 256) / 255;
 		$g = ((int)$this->green % 256) / 255;
 		$b = ((int)$this->blue  % 256) / 255;
@@ -95,17 +104,26 @@ class RGBColor extends Color {
 		return new CMYKColor($c*100, $m*100, $y*100, $k*100, $a);
 	}
 
-	function toRGB() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toRGB() {
 		return clone $this;
 	}
 
-	function toCSS($alpha = null) {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toCSS($alpha = null) {
 		return ($alpha === true || $this->alpha < 1) && $alpha !== false
 			? sprintf('rgba(%d, %d, %d, %s)', $this->red, $this->green, $this->blue, $this->alpha)
 			: sprintf('rgb(%d, %d, %d)', $this->red, $this->green, $this->blue);
 	}
 
-	function toHex() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toHex() {
 		$stack = array('#');
 		$stack[] = str_pad(dechex(min(255, round($this->red  ))), 2, '0', STR_PAD_LEFT);
 		$stack[] = str_pad(dechex(min(255, round($this->green))), 2, '0', STR_PAD_LEFT);
