@@ -17,18 +17,30 @@ class CMYKColor extends Color {
 		$this->alpha   = $a;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	function toHSV() {
 		return $this->toRGB()->toHSV();
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	function toHSL() {
 		return $this->toRGB()->toHSL();
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	function toCMYK() {
 		return clone $this;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	function toRGB() {
 		$c = ((int)$this->cyan    % 100) / 100;
 		$m = ((int)$this->magenta % 100) / 100;
@@ -42,6 +54,9 @@ class CMYKColor extends Color {
 		return new RGBColor($r * 255, $g * 255, $b * 255, $this->alpha);
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	function toCSS($alpha = null) {
 		return ($alpha === true || $this->alpha < 1) && $alpha !== false
 				? sprintf('device-cmyk(%d%%, %d%%, %d%%, %d%%, %s)',
