@@ -10,7 +10,7 @@ abstract class Color {
 	abstract function toHSV();
 	
 	/**
-	 * @return HLSColor
+	 * @return HSLColor
 	 */
 	abstract function toHSL();
 	
