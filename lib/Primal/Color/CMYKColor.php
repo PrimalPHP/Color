@@ -9,7 +9,7 @@ class CMYKColor extends Color {
 	public $black = 100;
 	public $alpha = 1;
 
-	function __construct($c = 0, $m = 0, $y = 0, $k = 100, $a=1) {
+	public function __construct($c = 0, $m = 0, $y = 0, $k = 100, $a=1) {
 		$this->cyan    = $c;
 		$this->magenta = $m;
 		$this->yellow  = $y;
@@ -20,28 +20,28 @@ class CMYKColor extends Color {
 	/**
 	 * {@inheritdoc}
 	 */
-	function toHSV() {
+	public function toHSV() {
 		return $this->toRGB()->toHSV();
 	}
 
 	/**
 	 * {@inheritdoc}
 	 */
-	function toHSL() {
+	public function toHSL() {
 		return $this->toRGB()->toHSL();
 	}
 
 	/**
 	 * {@inheritdoc}
 	 */
-	function toCMYK() {
+	public function toCMYK() {
 		return clone $this;
 	}
 
 	/**
 	 * {@inheritdoc}
 	 */
-	function toRGB() {
+	public function toRGB() {
 		$c = ((int)$this->cyan    % 100) / 100;
 		$m = ((int)$this->magenta % 100) / 100;
 		$y = ((int)$this->yellow  % 100) / 100;
@@ -57,7 +57,7 @@ class CMYKColor extends Color {
 	/**
 	 * {@inheritdoc}
 	 */
-	function toCSS($alpha = null) {
+	public function toCSS($alpha = null) {
 		return ($alpha === true || $this->alpha < 1) && $alpha !== false
 				? sprintf('device-cmyk(%d%%, %d%%, %d%%, %d%%, %s)',
 						$this->cyan, $this->magenta, $this->yellow, $this->black, $this->alpha)
