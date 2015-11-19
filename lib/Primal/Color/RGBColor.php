@@ -121,7 +121,7 @@ class RGBColor extends Color {
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * @return string
 	 */
 	public function toHex() {
 		$stack = array('#');
