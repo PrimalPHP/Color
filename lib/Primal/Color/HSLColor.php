@@ -72,7 +72,7 @@ class HSLColor extends Color {
 	 */
 	public function toCSS($alpha = null) {
 		return ($alpha === true || $this->alpha < 1) && $alpha !== false
-			? sprintf('hsla(%d, %d, %d, %s)', $this->hue, $this->saturation, $this->luminance, $this->alpha)
+			? sprintf('hsla(%d, %d, %d, %s)', $this->hue, $this->saturation, $this->luminance, number_format($this->alpha, 2, '.', ''))
 			: sprintf('hsl(%d, %d, %d)', $this->hue, $this->saturation, $this->luminance);
 	}
 }

@@ -116,7 +116,7 @@ class RGBColor extends Color {
 	 */
 	public function toCSS($alpha = null) {
 		return ($alpha === true || $this->alpha < 1) && $alpha !== false
-			? sprintf('rgba(%d, %d, %d, %s)', $this->red, $this->green, $this->blue, $this->alpha)
+			? sprintf('rgba(%d, %d, %d, %s)', $this->red, $this->green, $this->blue, number_format($this->alpha, 2, '.', ''))
 			: sprintf('rgb(%d, %d, %d)', $this->red, $this->green, $this->blue);
 	}
 

@@ -60,7 +60,7 @@ class CMYKColor extends Color {
 	public function toCSS($alpha = null) {
 		return ($alpha === true || $this->alpha < 1) && $alpha !== false
 				? sprintf('device-cmyk(%d%%, %d%%, %d%%, %d%%, %s)',
-						$this->cyan, $this->magenta, $this->yellow, $this->black, $this->alpha)
+						$this->cyan, $this->magenta, $this->yellow, $this->black, number_format($this->alpha, 2, '.', ''))
 				: sprintf('device-cmyk(%d%%, %d%%, %d%%, %d%%)',
 						$this->cyan, $this->magenta, $this->yellow, $this->black);
 	}
