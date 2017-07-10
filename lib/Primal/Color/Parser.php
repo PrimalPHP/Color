@@ -81,7 +81,7 @@ class Parser {
 	function hsva () {$this->result = new HSVColor((int)$this->chunks[1], (int)$this->chunks[2], (int)$this->chunks[3], (float)$this->chunks[4]);}
 	function hsv  () {$this->result = new HSVColor((int)$this->chunks[1], (int)$this->chunks[2], (int)$this->chunks[3]);}
 	function hex6 () {$this->result = new RGBColor(hexdec($this->chunks[1]), hexdec($this->chunks[2]), hexdec($this->chunks[3]));}
-	function hex3 () {$this->result = new RGBColor(hexdec($this->chunks[1])*16, hexdec($this->chunks[2])*16, hexdec($this->chunks[3])*16);}
+	function hex3 () {$this->result = new RGBColor(hexdec($this->chunks[1].$this->chunks[1]), hexdec($this->chunks[2].$this->chunks[2]), hexdec($this->chunks[3].$this->chunks[3]));}
 
 	
 	static $patterns = array(
