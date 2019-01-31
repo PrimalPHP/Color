@@ -1,4 +1,4 @@
-#Primal.Color
+# Primal.Color
 
 Created and Copyright 2012 by Jarvis Badgley, chiper at chipersoft dot com.
 
@@ -15,14 +15,14 @@ Primal.Color also includes a basic color wheel class for generating collections 
 
 [Primal](http://www.primalphp.com) is a collection of independent micro-libraries that collectively form a [LAMP](http://en.wikipedia.org/wiki/LAMP_\(software_bundle\)) development framework, but is not required to use Primal.Color in your own projects.
 
-##Requirements
+## Requirements
 - PHP 5.3 or later
 
-##Usage
+## Usage
 
 *coming soon*
 
-##Legal
+## Legal
 
 Primal is released under an MIT license.  No attribution is required and you are expected to make alterations.  For details see the enclosed LICENSE file.
 
