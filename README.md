@@ -1,6 +1,6 @@
 # Primal.Color
 
-Created and Copyright 2012 by Jarvis Badgley, chiper at chipersoft dot com.
+Created and Copyright 2012 by Jocelyn Badgley, chiper at chipersoft dot com.
 
 Primal.Color is a standalone micro-library to assist in the parsing, converting and manipulation of colors across various formats.
 
