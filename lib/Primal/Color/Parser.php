@@ -6,6 +6,7 @@ class Parser {
 	
 	protected $chunks;
 	protected $result;
+	protected $type;
 
 
 	function __construct($input) {
